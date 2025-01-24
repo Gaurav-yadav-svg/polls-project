@@ -55,7 +55,7 @@ from django.views import generic
 from .models import Choice, Question
 from django.utils import timezone
 
-"""this is index page"""
+
 class IndexView(generic.ListView):
     template_name = "polls/index.html"
     context_object_name = "latest_question_list"
@@ -68,7 +68,7 @@ class IndexView(generic.ListView):
     ]
     
         
-"""this is detail page"""
+
 class DetailView(generic.DetailView):
     model = Question
     template_name = "polls/detail.html"
@@ -79,7 +79,7 @@ class DetailView(generic.DetailView):
         """
         return Question.objects.filter(pub_date__lte=timezone.now())
 
-"""this is result page"""
+
 class ResultsView(generic.DetailView):
     model = Question
     template_name = "polls/results.html"
